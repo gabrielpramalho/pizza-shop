@@ -22,7 +22,7 @@ import { Skeleton } from './ui/skeleton'
 export function AccountMenu() {
   const navigate = useNavigate()
 
-  const { data: profile, isLoading: isLoagingProfile } = useQuery({
+  const { data: profile, isLoading: isLoadingProfile } = useQuery({
     queryKey: ['profile'],
     queryFn: getProfile,
     staleTime: Infinity,
@@ -60,7 +60,7 @@ export function AccountMenu() {
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-56">
           <DropdownMenuLabel className="flex flex-col">
-            {isLoagingProfile ? (
+            {isLoadingProfile ? (
               <div className="space-y-1.5">
                 <Skeleton className="h-4 w-32" />
                 <Skeleton className="h-3 w-24" />
